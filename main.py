@@ -35,9 +35,9 @@ def ImagenIzquierda():
         ImIzquierdaCV = cv2.imread(pathImage)
         
 
-#?###################
-#?#### Filtrados#####
-#?###################
+#?#################################
+#?#### Funciones de vision 3d #####
+#?#################################
 
 def Anaglifo():
     global ImIzquierda, ImDerecha , wid, hgt
@@ -81,6 +81,18 @@ def Cruzada():
     time.sleep(0.2)
     keyboard.press('F11')
 
+def TopDown():
+    global ImIzquierdaCV, ImDerechaCV
+
+    os.chdir("Resultados")
+    cv2.imwrite("TopDown.jpg", np.concatenate((ImIzquierdaCV,ImDerechaCV),0))
+    os.startfile("TopDown.jpg")#Abrir la imagen con el gestor de imagenes del computador
+    os.chdir("..")
+
+    time.sleep(0.2)
+    keyboard.press('F11')
+
+
 def PruebaAnaglifos():#
     global ImIzquierda, ImDerecha , wid, hgt
     ImRoja = PIL.ImageOps.colorize(ImIzquierda,(0,0,0),(255,0,0))#Las iamgenes estan en BGR
@@ -96,7 +108,6 @@ def PruebaAnaglifos():#
     os.startfile("Canalesseparados.jpg")#Abrir la imagen con el gestor de imagenes del computador
     time.sleep(0.1)
     keyboard.press('F11')
-
 
 
 #?##################
@@ -122,7 +133,7 @@ btnParalela.grid(column=1, row=2, padx=5, pady = 5)
 btnCruzada = Button(root, text = "Vision cruzada", width = 18, font=("Palatino Linotype",13),command=Cruzada)
 btnCruzada.grid(column=0, row=3, padx=5, pady = 5)
 
-btnTD = Button(root, text = "Top & Down", width = 18, font=("Palatino Linotype",13))
+btnTD = Button(root, text = "Top & Down", width = 18, font=("Palatino Linotype",13), command=TopDown)
 btnTD.grid(column=1, row=3, padx=5, pady = 5)
 
 root.mainloop()
