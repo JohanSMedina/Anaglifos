@@ -116,24 +116,26 @@ def PruebaAnaglifos():#
 
 root = Tk()
 root.title("Vision-3D")
+miFrame = Frame(root)
+miFrame.pack()
 
-btn1 = Button(root, text = "Elegir imagen Izquierda", width = 20,height=2, font=("Palatino Linotype",20),command=ImagenIzquierda)
+btn1 = Button(miFrame, text = "Elegir imagen Izquierda", width = 20,height=2, font=("Palatino Linotype",20),command=ImagenIzquierda)
 btn1.grid(column=0, row=0, padx=5, pady = 20)
 
-btn2 = Button(root, text = "Elegir imagen Derecha", width = 20,height=2, font=("Palatino Linotype",20),command=ImagenDerecha)
+btn2 = Button(miFrame, text = "Elegir imagen Derecha", width = 20,height=2, font=("Palatino Linotype",20),command=ImagenDerecha)
 btn2.grid(column=1, row=0, padx=5, pady = 20)
 
 
-btnAnaglifo = Button(root, text = "Anaglifo", width = 18, font=("Palatino Linotype",13), command=Anaglifo)
+btnAnaglifo = Button(miFrame, text = "Anaglifo", width = 18, font=("Palatino Linotype",13), command=Anaglifo)
 btnAnaglifo.grid(column=0, row=2, padx=5, pady = 5)
 
-btnParalela = Button(root, text = "Vision paralela", width = 18, font=("Palatino Linotype",13), command=Paralela)
+btnParalela = Button(miFrame, text = "Vision paralela", width = 18, font=("Palatino Linotype",13), command=Paralela)
 btnParalela.grid(column=1, row=2, padx=5, pady = 5)
 
-btnCruzada = Button(root, text = "Vision cruzada", width = 18, font=("Palatino Linotype",13),command=Cruzada)
+btnCruzada = Button(miFrame, text = "Vision cruzada", width = 18, font=("Palatino Linotype",13),command=Cruzada)
 btnCruzada.grid(column=0, row=3, padx=5, pady = 5)
 
-btnTD = Button(root, text = "Top & Down", width = 18, font=("Palatino Linotype",13), command=TopDown)
+btnTD = Button(miFrame, text = "Top & Down", width = 18, font=("Palatino Linotype",13), command=TopDown)
 btnTD.grid(column=1, row=3, padx=5, pady = 5)
 
 root.mainloop()
